@@ -3,6 +3,7 @@
     дом
     <button @click="onClose">закрыть</button>
     добрый день {{ name }}
+    ghj,tk
   </div>
 </template>
 
@@ -13,7 +14,8 @@ export default {
   name: "HomeBot",
   data() {
     return {
-      name: this.tg?.initDataUnsafe?.user?.username,
+      // name: this.tg,
+      name: this.tg.initDataUnsafe.user.username,
     };
   },
   components: {},
@@ -31,7 +33,9 @@ export default {
       tg: (state) => state.tg,
     }),
   },
-  mounted() {},
+  mounted() {
+    console.log(this.tg);
+  },
 };
 </script>
 
