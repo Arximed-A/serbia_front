@@ -16,10 +16,11 @@ export default {
   components: {},
   methods: {
     onClose() {
-      this.tg.close;
+      this.tg.close(); //17:23
     },
     useEffect() {
-      this.tg.ready;
+      // в примере он вызывает ready как колбэк и + пробрасывает пустой массив
+      this.tg.ready();
     },
   },
 };
