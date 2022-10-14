@@ -2,7 +2,7 @@
   <div>
     дом
     <button @click="onClose">закрыть</button>
-    добрый день
+    добрый день {{ name }}
   </div>
 </template>
 
