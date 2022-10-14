@@ -3,7 +3,6 @@
     дом
     <button @click="onClose">закрыть</button>
     добрый день {{ name }}
-    ghj,tk
   </div>
 </template>
 
@@ -15,8 +14,7 @@ export default {
   data() {
     return {
       // name: this.tg?.initDataUnsafe?.user?.username,
-      name: this.tg?.initDataUnsafe?.user?.username,
-      tg: window.Telegram.WebApp,
+      name: null,
     };
   },
   components: {},
@@ -31,8 +29,11 @@ export default {
   },
   computed: {
     ...mapState({
-      // tg: (state) => state.tg,
+      tg: (state) => state.tg,
     }),
+  },
+  mounted() {
+    this.name = this.tg?.initDataUnsafe?.user?.username;
   },
 };
 </script>
