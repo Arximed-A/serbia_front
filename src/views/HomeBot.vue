@@ -14,8 +14,8 @@ export default {
   name: "HomeBot",
   data() {
     return {
-      // name: this.tg,
-      name: null,
+      // name: this.tg?.initDataUnsafe?.user?.username,
+      name: this.tg?.version,
     };
   },
   components: {},
@@ -27,17 +27,11 @@ export default {
       // в примере он вызывает ready как колбэк и + пробрасывает пустой массив
       // this.tg.ready();
     },
-    test() {
-      this.name = this.tg?.initDataUnsafe?.user?.username;
-    },
   },
   computed: {
     ...mapState({
       tg: (state) => state.tg,
     }),
-  },
-  async mounted() {
-    await this.test();
   },
 };
 </script>
