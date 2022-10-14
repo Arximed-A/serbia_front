@@ -15,7 +15,8 @@ export default {
   data() {
     return {
       // name: this.tg?.initDataUnsafe?.user?.username,
-      name: this.tg?.version,
+      name: this.tg?.initDataUnsafe?.user?.username,
+      tg: window.Telegram.WebApp,
     };
   },
   components: {},
@@ -30,7 +31,7 @@ export default {
   },
   computed: {
     ...mapState({
-      tg: (state) => state.tg,
+      // tg: (state) => state.tg,
     }),
   },
 };
