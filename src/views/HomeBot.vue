@@ -2,15 +2,18 @@
   <div>
     дом
     <button @click="onClose">закрыть</button>
+    добрый день
   </div>
 </template>
 
 <script>
+import { mapState } from "vuex";
+
 export default {
   name: "HomeBot",
   data() {
     return {
-      tg: window.Telegram.WebApp,
+      name: this.tg.initDataUnsafe?.user?.username,
     };
   },
   components: {},
@@ -23,8 +26,15 @@ export default {
       this.tg.ready();
     },
   },
+  computed: {
+    ...mapState({
+      tg: (state) => state.tg,
+    }),
+  },
+  mounted() {},
 };
 </script>
+
 <style>
 * {
   margin: 0px;
@@ -32,7 +42,7 @@ export default {
   padding: 0;
   box-sizing: border-box;
 }
-body {
+.body {
   background: var(--tg-theme-bg-color);
   color: var(--tg-theme-text-color);
 }

@@ -1,0 +1,16 @@
+<template>
+  <button></button>
+</template>
+<script>
+//19
+</script>
+<style lang="scss">
+.button {
+  padding: 10px 15px;
+  background: var(--tg-theme-button-color);
+  color: var(--tg-theme-button-text-color);
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+</style>
