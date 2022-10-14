@@ -15,7 +15,7 @@ export default {
   data() {
     return {
       // name: this.tg,
-      name: this.tg.initDataUnsafe.user.username,
+      name: null,
     };
   },
   components: {},
@@ -25,7 +25,10 @@ export default {
     },
     useEffect() {
       // в примере он вызывает ready как колбэк и + пробрасывает пустой массив
-      this.tg.ready();
+      // this.tg.ready();
+    },
+    test() {
+      this.name = this.tg?.initDataUnsafe?.user?.username;
     },
   },
   computed: {
@@ -33,8 +36,8 @@ export default {
       tg: (state) => state.tg,
     }),
   },
-  mounted() {
-    console.log(this.tg);
+  async mounted() {
+    await this.test();
   },
 };
 </script>
