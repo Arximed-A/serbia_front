@@ -13,7 +13,7 @@ export default {
   name: "HomeBot",
   data() {
     return {
-      name: this.tg.initDataUnsafe?.user?.username,
+      name: this.tg?.initDataUnsafe?.user?.username,
     };
   },
   components: {},
