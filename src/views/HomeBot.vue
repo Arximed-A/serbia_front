@@ -1,6 +1,6 @@
 <template>
   <div class="body">
-    5
+    6
     <button @click="onClose">закрыть</button>
     <button @click="showMeMainButton">показать главную кнопку</button>
     добрый день {{ name }}
