@@ -1,6 +1,6 @@
 <template>
   <div class="body">
-    4
+    5
     <button @click="onClose">закрыть</button>
     <button @click="showMeMainButton">показать главную кнопку</button>
     добрый день {{ name }}
@@ -16,7 +16,6 @@ export default {
     return {
       // name: this.tg?.initDataUnsafe?.user?.username,
       name: null,
-      mainButton: null,
     };
   },
   components: {},
@@ -29,10 +28,11 @@ export default {
       // this.tg.ready();
     },
     showMeMainButton() {
-      if (this.tg.MainButton.isVisible) {
-        this.tg.MainButton.hide();
+      //22 минута
+      if (this.tg?.MainButton?.isVisible) {
+        this.tg?.MainButton?.hide();
       } else {
-        this.tg.MainButton.show();
+        this.tg?.MainButton?.show();
       }
     },
   },
@@ -43,7 +43,7 @@ export default {
   },
   mounted() {
     this.name = this.tg?.initDataUnsafe?.user?.username;
-    this.tg.MainButton.show();
+    console.log(this.tg);
   },
 };
 </script>
