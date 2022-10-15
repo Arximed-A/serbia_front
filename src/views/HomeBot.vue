@@ -34,6 +34,7 @@ export default {
       } else {
         this.tg?.MainButton?.show();
       }
+      return;
     },
   },
   computed: {
