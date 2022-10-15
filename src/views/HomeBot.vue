@@ -29,7 +29,7 @@ export default {
       // this.tg.ready();
     },
     showMeMainButton() {
-      if (this.tg.MainButton.isVisible) {
+      if (!this.tg.MainButton.isVisible) {
         this.tg.MainButton.show();
       } else {
         this.tg.MainButton.hide();
