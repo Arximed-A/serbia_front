@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="body">
     дом
     <button @click="onClose">закрыть</button>
     добрый день {{ name }}
@@ -44,9 +44,11 @@ export default {
   margin: 0px 0px;
   padding: 0;
   box-sizing: border-box;
+  font-family: sans-serif;
 }
 .body {
   background: var(--tg-theme-bg-color);
-  color: var(--tg-theme-text-color);
+  /* color: var(--tg-theme-text-color); */
+  color: red;
 }
 </style>
