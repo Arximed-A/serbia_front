@@ -2,6 +2,7 @@
   <div class="body">
     дом
     <button @click="onClose">закрыть</button>
+    <button @click="showMeMainButton">показать главную кнопку</button>
     добрый день {{ name }}
   </div>
 </template>
@@ -15,6 +16,7 @@ export default {
     return {
       // name: this.tg?.initDataUnsafe?.user?.username,
       name: null,
+      mainButton: null,
     };
   },
   components: {},
@@ -25,6 +27,13 @@ export default {
     useEffect() {
       // в примере он вызывает ready как колбэк и + пробрасывает пустой массив
       // this.tg.ready();
+    },
+    showMeMainButton() {
+      if (this.tg.MainButton.isVisible) {
+        this.tg.MainButton.show();
+      } else {
+        this.tg.MainButton.hide();
+      }
     },
   },
   computed: {
@@ -48,7 +57,6 @@ export default {
 }
 .body {
   background: var(--tg-theme-bg-color);
-  /* color: var(--tg-theme-text-color); */
-  color: red;
+  color: var(--tg-theme-text-color);
 }
 </style>
