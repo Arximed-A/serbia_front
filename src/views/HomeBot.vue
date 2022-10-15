@@ -1,6 +1,6 @@
 <template>
   <div class="body">
-    дом
+    4
     <button @click="onClose">закрыть</button>
     <button @click="showMeMainButton">показать главную кнопку</button>
     добрый день {{ name }}
@@ -29,10 +29,10 @@ export default {
       // this.tg.ready();
     },
     showMeMainButton() {
-      if (!this.tg.MainButton.isVisible) {
-        this.tg.MainButton.show();
-      } else {
+      if (this.tg.MainButton.isVisible) {
         this.tg.MainButton.hide();
+      } else {
+        this.tg.MainButton.show();
       }
     },
   },
@@ -43,6 +43,7 @@ export default {
   },
   mounted() {
     this.name = this.tg?.initDataUnsafe?.user?.username;
+    this.tg.MainButton.show();
   },
 };
 </script>
