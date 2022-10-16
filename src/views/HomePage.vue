@@ -1,6 +1,6 @@
 <template>
-  Добрый день имя {{ name }}
-  <div>фамилия{{ secondName }}</div>
+  <div>Добрый день {{ name }} {{ secondName }}</div>
+  <div>тут информация о нашей деятельности</div>
 </template>
 
 <script>
@@ -10,20 +10,20 @@ export default {
   name: "HomeBot",
   data() {
     return {
-      tg: window.Telegram.WebApp,
-      name: this.tg?.initDataUnsafe?.user?.first_name,
+      name: null,
       secondName: null,
     };
   },
   components: {
-    // ...mapState({
-    // 	tg: state => state.tg
-    // })
+    ...mapState({
+      tg: (state) => state.tg,
+    }),
   },
   methods: {},
   computed: {},
   mounted() {
     this.secondName = this.tg?.initDataUnsafe?.user?.last_name;
+    this.name = this.tg?.initDataUnsafe?.user?.first_name;
   },
 };
 </script>

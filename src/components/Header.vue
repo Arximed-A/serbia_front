@@ -1,8 +1,8 @@
 <template>
   <header class="header">
     <RouterLink to="/" class="link">Главная</RouterLink>
-    <RouterLink to="/" class="link">ВНЖ</RouterLink>
-    <RouterLink to="/" class="link">Гражданство</RouterLink>
+    <RouterLink to="/citizens" class="link">ВНЖ</RouterLink>
+    <RouterLink to="/resident" class="link">Гражданство</RouterLink>
   </header>
 </template>
 <script>
