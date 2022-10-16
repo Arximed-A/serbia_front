@@ -4,20 +4,21 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+// import { mapState } from "vuex";
 
 export default {
   name: "HomeBot",
   data() {
     return {
+      tg: window.Telegram.WebApp,
       name: null,
       secondName: null,
     };
   },
   components: {
-    ...mapState({
-      tg: (state) => state.tg,
-    }),
+    // ...mapState({
+    //   tg: (state) => state.tg,
+    // }),
   },
   methods: {},
   computed: {},
