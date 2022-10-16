@@ -1,7 +1,9 @@
 <template>
   <main class="page">
     <Header />
-    <router-view />
+    <div class="wrapper">
+      <router-view />
+    </div>
     <Button />
   </main>
 </template>
@@ -24,11 +26,14 @@ export default {
   font-family: Roboto, sans-serif;
 }
 .page {
-  height: 1vh;
-  width: 100%;
   padding: 5px;
   background: var(--tg-theme-bg-color);
-  background: grey;
   color: var(--tg-theme-text-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.wrapper {
+  flex: 1 1 auto;
 }
 </style>

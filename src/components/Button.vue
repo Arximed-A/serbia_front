@@ -25,6 +25,8 @@ export default {
 </script>
 <style lang="scss">
 .button {
+  width: 100%;
+  border-radius: 1px;
   display: block;
   padding: 10px 15px;
   background: var(--tg-theme-button-color);
