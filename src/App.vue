@@ -24,8 +24,11 @@ export default {
   font-family: Roboto, sans-serif;
 }
 .page {
+  height: 1vh;
+  width: 100%;
   padding: 5px;
   background: var(--tg-theme-bg-color);
+  background: grey;
   color: var(--tg-theme-text-color);
 }
 </style>

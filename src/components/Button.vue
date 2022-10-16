@@ -6,15 +6,20 @@ import { mapState } from "vuex";
 
 export default {
   name: "Button",
+  data() {
+    return {
+      tg: window.Telegram.WebApp,
+    };
+  },
   methods: {
     closeApp() {
       this.tg.close();
     },
   },
   computed: {
-    ...mapState({
-      tg: (state) => state.tg,
-    }),
+    // ...mapState({
+    //   tg: (state) => state.tg,
+    // }),
   },
 };
 </script>

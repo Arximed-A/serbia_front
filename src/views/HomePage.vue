@@ -25,6 +25,7 @@ export default {
   mounted() {
     this.secondName = this.tg?.initDataUnsafe?.user?.last_name;
     this.name = this.tg?.initDataUnsafe?.user?.first_name;
+    this.tg?.MainButton?.show();
   },
 };
 </script>
