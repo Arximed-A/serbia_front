@@ -1,11 +1,26 @@
 <template>
-  <button></button>
+  <button class="button" @click="closeApp">Закрыть</button>
 </template>
 <script>
-//19
+import { mapState } from "vuex";
+
+export default {
+  name: "Button",
+  methods: {
+    closeApp() {
+      this.tg.close();
+    },
+  },
+  computed: {
+    ...mapState({
+      tg: (state) => state.tg,
+    }),
+  },
+};
 </script>
 <style lang="scss">
 .button {
+  display: block;
   padding: 10px 15px;
   background: var(--tg-theme-button-color);
   color: var(--tg-theme-button-text-color);
