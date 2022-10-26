@@ -19,9 +19,7 @@ export default {
     };
   },
   methods: {},
-  mounted() {
-    this.tg.ready();
-  },
+  mounted() {},
 };
 </script>
 
