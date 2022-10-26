@@ -4,7 +4,7 @@
     <div class="wrapper">
       <router-view />
     </div>
-    <Button />
+    <Button text="Закрыть окно" />
   </main>
 </template>
 
@@ -12,8 +12,16 @@
 import Header from "./components/Header.vue";
 import Button from "./components/Button.vue";
 export default {
-  name: "app",
   components: { Header, Button },
+  data() {
+    return {
+      tg: window.Telegram.WebApp,
+    };
+  },
+  methods: {},
+  mounted() {
+    this.tg.ready();
+  },
 };
 </script>
 

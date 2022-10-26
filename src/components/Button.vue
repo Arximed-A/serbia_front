@@ -1,19 +1,26 @@
 <template>
-  <button class="button" @click="closeApp">Закрыть</button>
+  <button class="button" @click="showMainButton">{{ text }}</button>
 </template>
 <script>
 import { mapState } from "vuex";
 
 export default {
   name: "Button",
+  props: {
+    text: String,
+  },
   data() {
     return {
       tg: window.Telegram.WebApp,
     };
   },
   methods: {
-    closeApp() {
-      this.tg.close();
+    showMainButton() {
+      if (this.tg.MainButton.isVisible) {
+        this.tg?.MainButton?.hide();
+      } else {
+        this.tg?.MainButton?.show();
+      }
     },
   },
   computed: {
