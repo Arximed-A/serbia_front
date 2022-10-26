@@ -20,10 +20,10 @@ export default {
   methods: {
     showMainButton() {
       if (this.main?.isVisible) {
-        this.tg?.MainButton?.hide();
+        this.main?.hide();
         this.show = "невидно";
       } else {
-        this.tg?.MainButton?.show();
+        this.main?.show();
         this.show = "видно";
       }
     },
