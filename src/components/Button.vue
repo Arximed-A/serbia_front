@@ -14,18 +14,26 @@ export default {
     return {
       tg: window.Telegram.WebApp,
       show: "невидно",
+      boolean: false,
+      main: null,
     };
   },
   methods: {
     showMainButton() {
-      if (this.tg.MainButton.isVisible) {
+      if (this.main?.isVisible) {
         this.tg?.MainButton?.hide();
         this.show = "невидно";
+        this.boolean = false;
       } else {
         this.tg?.MainButton?.show();
         this.show = "видно";
+        this.boolean = true;
       }
     },
+  },
+  beforeUpdate() {},
+  mounted() {
+    this.main = this.tg?.MainButton;
   },
   computed: {
     // ...mapState({
