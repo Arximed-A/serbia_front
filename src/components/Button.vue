@@ -1,5 +1,6 @@
 <template>
   <button class="button" @click="showMainButton">{{ text }}</button>
+  <div>{{ show }}</div>
 </template>
 <script>
 import { mapState } from "vuex";
@@ -12,14 +13,17 @@ export default {
   data() {
     return {
       tg: window.Telegram.WebApp,
+      show: "невидно",
     };
   },
   methods: {
     showMainButton() {
       if (this.tg.MainButton.isVisible) {
         this.tg?.MainButton?.hide();
+        this.show = "невидно";
       } else {
         this.tg?.MainButton?.show();
+        this.show = "видно";
       }
     },
   },
