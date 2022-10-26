@@ -12,9 +12,8 @@ export default {
   },
   data() {
     return {
-      tg: window.Telegram.WebApp,
+      tg: null,
       show: "невидно",
-      boolean: false,
       main: null,
     };
   },
@@ -23,17 +22,18 @@ export default {
       if (this.main?.isVisible) {
         this.tg?.MainButton?.hide();
         this.show = "невидно";
-        this.boolean = false;
       } else {
         this.tg?.MainButton?.show();
         this.show = "видно";
-        this.boolean = true;
       }
     },
   },
   beforeUpdate() {},
   mounted() {
     this.main = this.tg?.MainButton;
+  },
+  beforeCreate() {
+    this.tg = window.Telegram.WebApp;
   },
   computed: {
     // ...mapState({
