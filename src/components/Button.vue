@@ -5,7 +5,7 @@
 <script>
 import { mapState } from "vuex";
 
-const data = window.Telegram.WebApp;
+// const data = window.Telegram.WebApp;
 
 export default {
   name: "Button",
@@ -30,7 +30,7 @@ export default {
     },
   },
   mounted() {
-    this.tg = data;
+    this.tg = window.Telegram.WebApp;
   },
   computed: {
     // ...mapState({
