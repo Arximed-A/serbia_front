@@ -1,20 +1,36 @@
 <template>
-  <button class="button" @click="dd">{{ text }}</button>
+  <button class="button" @click="toggleMainButton">{{ text }}</button>
+  <div>{{ status }}</div>
 </template>
 <script>
 import { mapState } from "vuex";
 
-const tg = window.Telegram.WebApp;
-
-tg.MainButton.show();
+const data = window.Telegram.WebApp;
 
 export default {
   name: "Button",
+  tg: null,
   props: {
     text: String,
   },
   data() {
-    return {};
+    return {
+      status: "невидно",
+    };
+  },
+  methods: {
+    toggleMainButton() {
+      if (this.tg?.MainButton?.isVisible) {
+        this.tg?.MainButton?.hide();
+        this.status = "невидно";
+      } else {
+        this.tg?.MainButton?.show();
+        this.status = "видно";
+      }
+    },
+  },
+  mounted() {
+    this.tg = data;
   },
   computed: {
     // ...mapState({
