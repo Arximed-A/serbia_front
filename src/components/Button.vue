@@ -9,7 +9,7 @@ import { mapState } from "vuex";
 
 export default {
   name: "Button",
-  tg: null,
+  tg: window.Telegram.WebApp,
   props: {
     text: String,
   },
@@ -32,11 +32,7 @@ export default {
   mounted() {
     this.tg = window.Telegram.WebApp;
   },
-  computed: {
-    // ...mapState({
-    //   tg: (state) => state.tg,
-    // }),
-  },
+  computed: {},
 };
 </script>
 <style lang="scss">
@@ -45,7 +41,7 @@ export default {
   border-radius: 1px;
   display: block;
   padding: 10px 15px;
-  background: var(--tg-theme-button-color);
+  background: var(--tg-theme-secondary-bg-color);
   color: var(--tg-theme-button-text-color);
   border: none;
   outline: none;

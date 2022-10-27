@@ -18,8 +18,6 @@ export default {
       tg: window.Telegram.WebApp,
     };
   },
-  methods: {},
-  mounted() {},
 };
 </script>
 
@@ -30,6 +28,7 @@ export default {
   padding: 0px;
   box-sizing: border-box;
   font-family: Roboto, sans-serif;
+  color: var(--tg-theme-text-color);
 }
 .page {
   padding: 5px;
