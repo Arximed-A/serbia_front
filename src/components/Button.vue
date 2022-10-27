@@ -1,38 +1,13 @@
 <template>
-  <button class="button" @click="toggleMainButton">{{ text }}</button>
-  <div>{{ status }}</div>
+  <button class="button" @click="callback">{{ text }}</button>
 </template>
 <script>
-import { mapState } from "vuex";
-
-// const data = window.Telegram.WebApp;
-
 export default {
   name: "Button",
-  tg: window.Telegram.WebApp,
   props: {
     text: String,
+    callback: Function,
   },
-  data() {
-    return {
-      status: "невидно",
-    };
-  },
-  methods: {
-    toggleMainButton() {
-      if (this.tg?.MainButton?.isVisible) {
-        this.tg?.MainButton?.hide();
-        this.status = "невидно";
-      } else {
-        this.tg?.MainButton?.show();
-        this.status = "видно";
-      }
-    },
-  },
-  mounted() {
-    this.tg = window.Telegram.WebApp;
-  },
-  computed: {},
 };
 </script>
 <style lang="scss">

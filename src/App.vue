@@ -4,19 +4,37 @@
     <div class="wrapper">
       <router-view />
     </div>
-    <Button text="Закрыть окно" />
+    <Button text="Закрыть окно" v-bind:callback="toggleMainButton" />
+    <div>{{ status }}</div>
   </main>
 </template>
 
 <script>
 import Header from "./components/Header.vue";
 import Button from "./components/Button.vue";
+const data = window.Telegram.WebApp;
 export default {
   components: { Header, Button },
   data() {
     return {
-      tg: window.Telegram.WebApp,
+      tg: null,
+      status: "не",
     };
+  },
+  methods: {
+    toggleMainButton() {
+      console.log(this.tg); // for test
+      if (this.tg?.MainButton?.isVisible) {
+        this.tg?.MainButton?.hide();
+        this.status = "невидно";
+      } else {
+        this.tg?.MainButton?.show();
+        this.status = "видно";
+      }
+    },
+  },
+  mounted() {
+    this.tg = data;
   },
 };
 </script>
