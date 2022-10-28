@@ -16,7 +16,7 @@ export default {
   border-radius: 1px;
   display: block;
   padding: 10px 15px;
-  background: var(--tg-theme-secondary-bg-color);
+  background: var(--tg-theme-button-color);
   color: var(--tg-theme-button-text-color);
   border: none;
   outline: none;
